@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CAST · 随机密码铸造</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<div class="pop" role="dialog" aria-label="CAST 随机密码铸造">
+
+    <header class="pop-head">
+      <img class="head-art" src="assets/typecase.jpg" alt="铅字字盘微距">
+      <div class="head-scrim"></div>
+      <div class="head-row">
+        <svg class="mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="8.6" height="8.6" rx="1.4"/><rect x="13.4" y="2" width="8.6" height="8.6" rx="1.4"/><rect x="2" y="13.4" width="8.6" height="8.6" rx="1.4"/><rect x="13.4" y="13.4" width="8.6" height="8.6" rx="1.4" opacity=".3"/></svg>
+        <span class="wordmark">CAST</span>
+        <span class="hd-sep"></span>
+        <span class="hd-sub">随机密码铸造</span>
+        <div class="head-act">
+          <button class="ib" id="setBtn" aria-label="设置"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"/></svg></button>
+        </div>
+      </div>
+      <div class="head-cap"><span>本地生成 · 不联网 · 不上传</span></div>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn on" role="tab" data-go="gen" aria-selected="true">铸造</button>
+      <button class="tab-btn" role="tab" data-go="hist" aria-selected="false">历史<span class="cnt" id="hcnt">6</span></button>
+    </nav>
+
+    <div class="body">
+      <!-- ══ 视图一：铸造 ══ -->
+      <section class="panel" data-panel="gen">
+        <div class="plate">
+          <div class="plate-bar">
+            <span class="pm">输出</span>
+            <span class="pm b" id="pwMeta">20 位</span>
+            <div class="pacts">
+              <button class="cp" id="copyBtn" aria-label="复制密码"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg><span id="copyTxt">复制</span></button>
+              <button class="ib" id="rerollBtn" aria-label="换一个"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></svg></button>
+            </div>
+          </div>
+          <div class="pw" id="pw">—</div>
+          <svg class="ruler" id="ruler" viewBox="0 0 200 30" preserveAspectRatio="none" aria-hidden="true"></svg>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><span class="v" id="bits">—</span><span class="k">bit 熵</span></div>
+          <div class="segwrap">
+            <div class="segs" id="segs" data-lv="4"><i></i><i></i><i></i><i></i></div>
+            <span class="lvname" id="lvname">极强</span>
+          </div>
+          <div class="stat r"><span class="v" id="crack">—</span><span class="k">暴力枚举耗时</span></div>
+        </div>
+
+        <div class="len">
+          <div class="len-hd">
+            <span class="lbl">长度</span>
+            <span class="lnum" id="lnum">20</span>
+            <span class="lmax">/ 64</span>
+            <span class="lenhint">拖动 · 或 <b>←</b><b>→</b> 微调</span>
+          </div>
+          <input type="range" id="len" min="6" max="64" value="20" aria-label="密码长度">
+        </div>
+
+
+        <div class="slab"><h2>字盘</h2><span>点行开关 · 符号逐颗可选</span></div>
+        <div class="trays" id="trays">
+          <button class="tray" data-set="upper" aria-pressed="true">
+            <span class="kt"><span class="glyphs">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+              <span class="nm">大写字母 <em>A–Z · 26</em></span></span>
+            <span class="sw" aria-hidden="true"></span>
+          </button>
+          <button class="tray" data-set="lower" aria-pressed="true">
+            <span class="kt"><span class="glyphs">abcdefghijklmnopqrstuvwxyz</span>
+              <span class="nm">小写字母 <em>a–z · 26</em></span></span>
+            <span class="sw" aria-hidden="true"></span>
+          </button>
+          <button class="tray" data-set="digit" aria-pressed="true">
+            <span class="kt"><span class="glyphs">0123456789</span>
+              <span class="nm">数字 <em>0–9 · 10</em></span></span>
+            <span class="sw" aria-hidden="true"></span>
+          </button>
+          <button class="tray" data-set="symbol" aria-pressed="true">
+            <span class="kt"><span class="glyphs">!@#$%&amp;*()-_=+[]{};:,.?/~</span>
+              <span class="nm">特殊字符 <em id="symMeta">25 个全开</em></span></span>
+            <span class="sw" aria-hidden="true"></span>
+          </button>
+          <div class="symwrap" id="symwrap">
+            <div class="symgrid" id="symgrid" role="group" aria-label="逐个挑选特殊字符"></div>
+          </div>
+          <button class="tray" data-set="custom" id="customTray" aria-pressed="false">
+            <span class="kt"><span class="glyphs" id="customGlyphs">· 未加入字盘 ·</span>
+              <span class="nm">自定义字符 <em id="customMeta">未启用</em></span></span>
+            <span class="sw" aria-hidden="true"></span>
+          </button>
+          <div class="cin-wrap" id="cinWrap">
+            <input class="cin" id="customIn" maxlength="32" placeholder="输入要并进字盘的字符，例如 「§± 中文」">
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ══ 视图二：历史 ══ -->
+      <section class="panel" data-panel="hist" hidden>
+        <div class="slab"><h2>最近铸造</h2><span>仅存本机 · 最多 8 条</span></div>
+        <ul class="hlist" id="hlist"></ul>
+        <button class="ghost" id="clearHist">清空铸造记录</button>
+      </section>
+    </div>
+
+    <footer class="pop-foot">
+      <button class="gen" id="genBtn">
+        <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></svg>
+        <span id="genTxt">生成新密码</span>
+      </button>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="scrim" id="scrim"></div>
+
+    <div class="sheet" id="sheet" role="dialog" aria-label="设置">
+      <div class="grab"></div>
+      <div class="sheet-hd"><b>设置</b>
+        <button class="ib" id="sheetX" aria-label="关闭设置"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66a8,8,0,0,1,11.32-11.32L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button>
+      </div>
+      <button type="button" class="srow" data-opt="exclude" aria-pressed="false"><span class="t"><b>排除易混字符</b><em>去掉 0 O 1 l I | 与反引号</em></span>
+        <span class="sw" aria-hidden="true"></span></button>
+      <button type="button" class="srow" data-opt="nodup" aria-pressed="false"><span class="t"><b>避免连续重复</b><em>同一位不出现相邻重复字符</em></span>
+        <span class="sw" aria-hidden="true"></span></button>
+      <button type="button" class="srow" data-opt="wip" aria-pressed="true"><span class="t"><b>复制后 30 秒清空剪贴板</b><em>30 秒后用不可见字符覆盖，密码不留在剪贴板里</em></span>
+        <span class="sw on" aria-hidden="true"></span></button>
+      <button type="button" class="srow" data-opt="clearOnClose" aria-pressed="true"><span class="t"><b>关闭 popup 后清空显示</b><em>下次打开重新铸造一次</em></span>
+        <span class="sw on" aria-hidden="true"></span></button>
+      <div class="sfoot">快捷键：C 复制 · 空格重铸 · ← → 调长度 · 1–4 切字盘<br>所有字符由 Web Crypto 在本机生成，扩展不申请任何网络权限。</div>
+    </div>
+  </div>
+<script src="popup.js"></script>
+</body>
+</html>

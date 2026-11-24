@@ -1,0 +1,17 @@
+# 打包私钥：泄露后别人可以伪造扩展更新，绝不入库
+*.pem
+
+# macOS 与编辑器杂项
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+
+# 会话工作区数据，不是项目文件
+.workbuddy/
+
+# Python / Node 缓存
+__pycache__/
+*.pyc
+node_modules/

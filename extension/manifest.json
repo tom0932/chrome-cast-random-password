@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "CAST · 随机密码铸造",
+  "short_name": "CAST",
+  "version": "1.0.0",
+  "description": "点一下铸一枚随机密码。大写、小写、数字、特殊字符逐颗可选，自定义字符、长度可量。全部由 Web Crypto 在本机生成，不联网。",
+  "minimum_chrome_version": "116",
+  "action": {
+    "default_title": "CAST · 随机密码铸造",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "offscreen",
+    "clipboardWrite"
+  ]
+}
