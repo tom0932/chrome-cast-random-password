@@ -11,6 +11,9 @@
 # 会话工作区数据，不是项目文件
 .workbuddy/
 
+# 商店上架物料：留在本地，不公开到仓库
+store/
+
 # Python / Node 缓存
 __pycache__/
 *.pyc
